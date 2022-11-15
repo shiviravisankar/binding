@@ -1,13 +1,22 @@
 :root{
     --body-copy:17px;
     --body-copy-line-height: calc(var(--body-copy)*1.2);
-    --main-heading: 10vw;
+    --main-heading: calc(var(--body-copy)*4);
     --main-heading-line-height: calc(var(--main-heading));
 }
 body{
     background-color: #ED7054;
     font-family: 'Space Grotesk', sans-serif;
     margin: 0;
+    font-size: var(--body-copy);
+}
+h1{
+    display: block;
+    font-size: var(--main-heading);
+    margin-block-start: 0.67em;
+    margin-block-end: 0.67em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
 }
 nav{
     position: fixed;
