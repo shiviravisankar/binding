@@ -181,6 +181,14 @@ span {
         line-height: var(--title-line-height);
     }
 
+    h5{
+        font-size: var(--body-copy);
+        line-height: var(--body-copy-line-height);
+        font-weight: 600;
+        margin: 0;
+        padding: 0;
+    }
+
     li{
         margin-bottom: 20px;
     }
