@@ -96,8 +96,6 @@ u.o.background=new function() {
         }, node.build()
     }
 },
-
- // TITLE TEXT SCROLLING
 u.o.headline=new function() {
     this.init=function(node) {
         node.resized=function() {
@@ -109,13 +107,9 @@ u.o.headline=new function() {
         node.scrolled=function() {
             0<=page.scrollY&&(node.isActive&&page.scrollY<=node.bounds.top-page.browserH?(node.isActive=!1,node.currentSize=node.maxSize):page.scrollY>node.bounds.top-page.browserH&&page.scrollY+page.browserH<node.bounds.top+node.bounds.height?(node.isActive=!0,0<node.bounds.top?node.currentScrollPersentage=100-(100/node.bounds.height*(page.scrollY+page.browserH-node.bounds.top)).toFixed(2):node.currentScrollPersentage=100-(100/(node.bounds.height-page.browserH)*page.scrollY).toFixed(2),node.currentSize=node.minSize+(node.maxSize-node.minSize) / 100*node.currentScrollPersentage):node.isActive&&page.scrollY+page.browserH>=node.bounds.top+node.bounds.height&&(node.isActive=!1,node.currentSize=node.minSize),updatePosition(node.currentSize))
         };
-
-         // TITLE TEXT SIZING for title 1
         var updatePosition=function(currentSize) {
             var currentWidth=0, currentHeight=0, sectionIndex=node.headline.sections.length-Math.ceil(node.currentScrollPersentage/(100/node.headline.sections.length));return node.headline.sections.forEach(function(section,i){i<=sectionIndex&&!u.hc(section,"headline-content-section__active")?u.ac(section,"headline-content-section__active"):sectionIndex<i&&u.hc(section,"headline-content-section__active")&&u.rc(section,"headline-content-section__active"),section.words.forEach(function(word){currentWidth+word.bounds.width*currentSize>node.bounds.width&&(currentHeight+=word.bounds.height*currentSize,currentWidth=0),u.as(word,{transform:"translate3d("+currentWidth+"px,"+currentHeight+"px, 0px) scale("+currentSize+")"}),currentWidth+=word.bounds.width*currentSize})}), currentHeight+=node.headline.sections[0].words[0].bounds.height*currentSize
         };
-
-         // TITLE TEXT SIZING REVERSE
         node.build=function() {
             node.isReady=!0,
             node.bounds= {
@@ -126,4 +120,16 @@ u.o.headline=new function() {
             node.maxSize=u.hc(node.headline,"headline__reverse")?.35: 1, node.currentScrollPersentage=100, node.headline.sections.forEach(function(section){section.words=u.qsa(".group", section), section.words.forEach(function(word){word.bounds={width:word.offsetWidth, height:word.offsetHeight}})}), u.as(node.headline, {height:Math.ceil(updatePosition(node.minSize))+"px"}), u.hc(node.headline, "headline__reverse")||u.as(node, {height:Math.max(Math.ceil(updatePosition(node.maxSize))+u.absY(node.headline), 1.5*page.browserH)+"px"}), node.bounds.height=node.offsetHeight, updatePosition(node.maxSize)
         }, node.build()
     }
-}
+},
+u.o.navigation=new function() {
+    this.init=function(node) {
+        node.resized=function() {},
+        node.scrolled=function() {},
+        node.clicked=function(e) {
+            u.hc(e.target, "item-action__contact")&&(e.preventDefault(), u.scrollTo(document.body, {duration:1800, y:u.absY(window.contact)}))
+        },
+        node.build=function() {
+            node.isReady=!0, u.e.addEvent(node, "click", {callback:node.clicked})
+        }, node.build()
+    }
+};
