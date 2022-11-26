@@ -1,3 +1,15 @@
+/*|| TYPOGRAPHY */
+@import url('https://fonts.googleapis.com/css2?family=Public+Sans:ital,wght@0,100;0,200;0,300;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+body{
+  margin: auto;
+  padding: auto;
+  width: 80%;
+  background-color: #08f7fe;
+  font-family: 'public_sansthin', serif;
+}
+
+/*
 .zoom {
     height: 100vh;
     position: fixed;
@@ -8,3 +20,4 @@
     place-items: center;
     font: 700 12px system-ui;
   }
+*/
