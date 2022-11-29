@@ -1,19 +1,5 @@
 /*|| TYPOGRAPHY */
-@font-face {
-    font-family: 'public_sansthin_italic', serif;
-    src: url('publicsans-italic-variablefont_wght-webfont.woff2') format('woff2'),
-         url('publicsans-italic-variablefont_wght-webfont.woff') format('woff');
-    font-weight: normal;
-    font-style: normal;
-}
-
-@font-face {
-    font-family: 'public_sansthin', serif;
-    src: url('publicsans-variablefont_wght-webfont.woff2') format('woff2'),
-         url('publicsans-variablefont_wght-webfont.woff') format('woff');
-    font-weight: normal;
-    font-style: normal;
-}
+@import url('https://fonts.googleapis.com/css2?family=Public+Sans:ital,wght@0,100;0,200;0,300;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
 /*|| BASE VALUES */
 :root{
@@ -43,10 +29,13 @@ html {
 
 body {
     font-family: 'Public Sans', serif;;
-    height: 100%;
+    height: 100vh;
     touch-action: manipulation;
     overflow: auto;
-    background-color: #FF6A49;
+    background-color: #322e2f;
+    color: white;
+    font-family: 'Public Sans', sans-serif;
+    font-weight: 200;
     margin: auto;
     padding: auto;
     width: 80vw;
@@ -65,8 +54,8 @@ ul, ol {
 
 /*|| TOP NAVIGATION */
 .navigation{
-    width: 80%;
-    margin-top: 2vh;
+    margin-top: 5vh;
+    font-weight: 300;
 }
 
 .navigation-description span{
@@ -127,8 +116,6 @@ h1{
 .page-content .content {
     position: relative;
     z-index: 1;
-    width: 80%;
-    padding-bottom: 10px;
 }
 
 .page-content .content ul {
@@ -178,17 +165,23 @@ h1{
     h3{
         font-size: var(--sub-heading);
         line-height: var(--sub-heading-line-height);
+        font-weight: 700;
+        padding-top: 20px;
+        padding-bottom: 20px;
     }
 
     h4{
         font-size: var(--title);
         line-height: var(--title-line-height);
+        font-weight: 700;
+        margin-bottom: 20px;
     }
 
     h5{
         font-size: var(--body-copy);
         line-height: var(--body-copy-line-height);
-        font-weight: 600;
+        font-weight: 700;
+        margin-bottom: 5px;
     }
 
     li{
@@ -198,40 +191,56 @@ h1{
 /*|| AUTHOR SUMMARY */
     .about{
         overflow: hidden;
+        margin-bottom: 50px;
     }
 
     .quote{
         font-size: var(--quote);
-        font-weight: 600;
+        font-weight: 700;
+        padding-bottom: 10px;
     }
 
     .spacing{
-        padding-bottom: 20px;
+        padding-bottom: 50px;
     }
 
 /*|| BOTTOM NAVIGATION */
     .mobile-nav {
-        background-color: #FF6A49;
+        background-color: #322e2f;
         position: fixed;
         bottom: 0;
         height: 65px;
-        width: 100%;
         display: flex;
         justify-content: space-evenly;
         z-index: 9999;
         left: 0;
         right: 0;
+        padding-top: 5px;
     }
 
     .bloc-icon {
         display: flex;
         width: 50px;
         height: 50px;
-        background-color: #333333;
+        background-color: #322e2f;
         color: white;
         justify-content: center;
         align-items: center;
         border-radius: 100%;
+        font-weight: 500;
+
+    }
+
+    .inclusion{
+        background-color: #4203c9;
+    }
+
+    .aged{
+      background-color: #FF6A49;  
+    }
+
+    .color{
+        background-color: #e2d810;
     }
 
 /*|| BOTTOM NAVIGATION FOR LARGER SCREENS */
