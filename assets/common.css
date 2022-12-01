@@ -227,7 +227,7 @@ h1{
         justify-content: center;
         align-items: center;
         border-radius: 100%;
-        font-weight: 500;
+        font-weight: 700;
 
     }
 
@@ -236,7 +236,7 @@ h1{
     }
 
     .aged{
-      background-color: #FF6A49;  
+      background-color: #12a4d9;  
     }
 
     .color{
