@@ -1,11 +1,15 @@
-const zoomElement = document.querySelector(".zoom");
-let zoom = 1;
-const ZOOM_SPEED = 0.1;
-
-document.addEventListener("wheel", function (e) {
-  if (e.deltaY > 0) {
-    zoomElement.style.transform = `scale(${(zoom += ZOOM_SPEED)})`;
-  } else {
-    zoomElement.style.transform = `scale(${(zoom -= ZOOM_SPEED)})`;
-  }
-});
+	<script>
+			let mainContent = document.querySelector('#secondary_content');
+			let secondaryContent = document.querySelector('#main_content');
+			let is = document.getElementById('IS');
+			let isnt = document.getElementById('ISNT');
+			let switchdiv = document.getElementById('switch');
+			let ref_line = document.getElementById('line');
+			window.onscroll = function () { sticker() };
+			document.querySelector('.switch input').addEventListener('change', e => {
+				mainContent.style.display = e.target.checked ? 'block' : 'none';
+				secondaryContent.style.display = e.target.checked ? 'none' : 'block';
+				isnt.style.display = e.target.checked ? 'block' : 'none';
+				is.style.display = e.target.checked ? 'none' : 'block';
+			});
+		</script>
